@@ -13,9 +13,9 @@
 # This script do the following:                               #
 # 1. Load the Data                                            #
 # 2. Partition the data into Train/Test set                   #
-# 3. Train the NeuralNetwork Model                            #
+# 3. Train the Model                                          #
 # 4. Test                                                     #
-# 5. Evaluate on : Correlation, Regression, RMSE, Accuracy.   # 
+# 5. Evaluate                                                 # 
 # 6. Finally Saving the results.                              #
 #                                                             #
 ###############################################################
@@ -228,7 +228,7 @@ head(Predicted10)
 Predicted <- predict(model1, testDataset)
 
 head(Predicted)
-for(i in 1:3581){
+for(i in 1:nrow(trainDataset)){
   Predicted[i]=(Predicted1[i]+Predicted3[i]+Predicted5[i]+Predicted7[i])/4
 }
 
